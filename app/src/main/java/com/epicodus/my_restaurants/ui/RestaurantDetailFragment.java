@@ -1,4 +1,4 @@
-package com.epicodus.myrestaurants.ui;
+package com.epicodus.my_restaurants.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,9 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.epicodus.myrestaurants.R;
-import com.epicodus.myrestaurants.models.Restaurant;
+import com.epicodus.my_restaurants.Constants;
+import com.epicodus.my_restaurants.R;
+import com.epicodus.my_restaurants.models.Restaurant;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -20,6 +24,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RestaurantDetailFragment extends Fragment implements View.OnClickListener {
+    private static final int MAX_WIDTH = 400;
+    private static final int MAX_HEIGHT = 300;
     @BindView(R.id.restaurantImageView)
     ImageView mImageLabel;
     @BindView(R.id.restaurantNameTextView)
@@ -58,7 +64,11 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
         View view = inflater.inflate(R.layout.fragment_restaurant_detail, container, false);
         ButterKnife.bind(this, view);
 
-        Picasso.with(view.getContext()).load(mRestaurant.getImageUrl()).into(mImageLabel);
+        Picasso.with(view.getContext())
+                .load(mRestaurant.getImageUrl())
+                .resize(MAX_WIDTH, MAX_HEIGHT)
+                .centerCrop()
+                .into(mImageLabel);
 
         mNameLabel.setText(mRestaurant.getName());
         mCategoriesLabel.setText(android.text.TextUtils.join(", ", mRestaurant.getCategories()));
@@ -69,6 +79,8 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
         mWebsiteLabel.setOnClickListener(this);
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
+
+        mSaveRestaurantButton.setOnClickListener(this);
 
         return view;
     }
@@ -92,5 +104,13 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
                             + "?q=(" + mRestaurant.getName() + ")"));
             startActivity(mapIntent);
         }
+        if (v == mSaveRestaurantButton) {
+            DatabaseReference restaurantRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_RESTAURANTS);
+            restaurantRef.push().setValue(mRestaurant);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }

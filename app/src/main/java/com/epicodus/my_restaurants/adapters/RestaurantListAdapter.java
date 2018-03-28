@@ -1,4 +1,4 @@
-package com.epicodus.myrestaurants.adapters;
+package com.epicodus.my_restaurants.adapters;
 
 
 
@@ -13,14 +13,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.epicodus.myrestaurants.R;
-import com.epicodus.myrestaurants.models.Restaurant;
-import com.epicodus.myrestaurants.ui.RestaurantDetailActivity;
+import com.epicodus.my_restaurants.R;
+import com.epicodus.my_restaurants.models.Restaurant;
+import com.epicodus.my_restaurants.ui.RestaurantDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

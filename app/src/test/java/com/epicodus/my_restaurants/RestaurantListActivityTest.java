@@ -1,9 +1,9 @@
-package com.epicodus.myrestaurants;
+package com.epicodus.my_restaurants;
 
 import android.os.Build;
 import android.widget.ListView;
 
-import com.epicodus.myrestaurants.ui.RestaurantListActivity;
+import com.epicodus.my_restaurants.ui.RestaurantListActivity;
 
 import org.junit.Before;
 import org.junit.Test;

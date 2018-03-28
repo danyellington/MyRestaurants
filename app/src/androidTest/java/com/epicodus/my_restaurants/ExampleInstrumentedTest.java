@@ -1,4 +1,4 @@
-package com.epicodus.myrestaurants;
+package com.epicodus.my_restaurants;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.epicodus.myrestaurants", appContext.getPackageName());
+        assertEquals("com.epicodus.my_restaurants", appContext.getPackageName());
     }
 }

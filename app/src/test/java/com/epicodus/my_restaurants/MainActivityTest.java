@@ -1,11 +1,11 @@
-package com.epicodus.myrestaurants;
+package com.epicodus.my_restaurants;
 
 import android.content.Intent;
 import android.os.Build;
 import android.widget.TextView;
 
-import com.epicodus.myrestaurants.ui.MainActivity;
-import com.epicodus.myrestaurants.ui.RestaurantListActivity;
+import com.epicodus.my_restaurants.ui.MainActivity;
+import com.epicodus.my_restaurants.ui.RestaurantListActivity;
 
 import org.junit.Before;
 import org.junit.Test;

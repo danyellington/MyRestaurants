@@ -1,12 +1,12 @@
-package com.epicodus.myrestaurants.adapters;
+package com.epicodus.my_restaurants.adapters;
 
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.epicodus.myrestaurants.models.Restaurant;
-import com.epicodus.myrestaurants.ui.RestaurantDetailFragment;
+import com.epicodus.my_restaurants.models.Restaurant;
+import com.epicodus.my_restaurants.ui.RestaurantDetailFragment;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.epicodus.myrestaurants.ui;
+package com.epicodus.my_restaurants.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.epicodus.myrestaurants.R;
-import com.epicodus.myrestaurants.adapters.RestaurantListAdapter;
-import com.epicodus.myrestaurants.models.Restaurant;
-import com.epicodus.myrestaurants.services.YelpService;
+import com.epicodus.my_restaurants.R;
+import com.epicodus.my_restaurants.adapters.RestaurantListAdapter;
+import com.epicodus.my_restaurants.models.Restaurant;
+import com.epicodus.my_restaurants.services.YelpService;
 
 import java.io.IOException;
 import java.util.ArrayList;
